@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<h2>Login</h2><br>
+<form method="GET">
+    <div class="form-group">
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="Email">
+    </div>
+  <div class="form-group">
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="Password">
+  </div><br>
+  <button type="submit" class="btn btn-primary">enter</button>
+</form>
+<br>
+<div id="results">
+  {% if result %}
+    <div class="category-name">Welcome {{username}}</div>
+    <div>{{message}}</div>
+    <a class="nav-item nav-link" href="{{ url_for('search') }}">Search the phonebook</a>
+    <a class="nav-item nav-link" href="{{ url_for('addname') }}">Add to phonebook</a>
+  {% else %}
+    <div class="navbar-nav">
+      <div>{{message}}</div>
+      <a class="nav-item nav-link" href="{{ url_for('signup') }}">OR SIGN UP</a>
+      <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}sign up{% endblock %}
+
+{% block content %}
+<h4>Sign up to our phone book</h4>
+<form method="POST" action="#">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Username" name="Username">
+  </div>
+  <div class="form-group">
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="Password">
+  </div>
+  <div class="form-group">
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="Email">
+    <br>
+  </div>
+  <button type="submit" class="btn btn-primary">signup</button>
+</form>
+<div id="results">
+  {% if message %}
+    <div>{{message}}</div>
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
+    </div>
+  {% endif %}
+{% endblock %}

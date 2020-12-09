@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}user phone numbers{% endblock %}
+
+{% block content %}
+<h4>Here are all of your phone numbers</h3>
+<h2>Results:</h2>
+<div id="results">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Phone Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for p in phone %}
+      <tr>
+       <td>{{ p.name }}</td>
+       <td>{{ p.phonenumber }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+    <a class="nav-item nav-link" href="{{ url_for('addname') }}">Add to phonebook</a>
+    <a class="nav-item nav-link" href="{{ url_for('logout') }}">Log Out</a>
+</div>
+  {% endblock %}

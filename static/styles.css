@@ -1,0 +1,57 @@
+body {
+  margin: 5em;
+  background-image: url('image/crop.jpg');
+}
+#results {
+  padding: 1em;
+  background: rgba(255,255,255, 0.7);
+  border-radius: 5px;
+  color: rgb(40, 108, 91);
+}
+#phones {
+  color: rgb(35, 77, 51);
+  font-weight: 600;
+  border-radius: 5px;
+  border-color: rgb(14, 61, 33);
+  border-width: 2px;
+  background: rgba(255,255,255, 0.5);
+}
+.phone-details {
+  display: block;
+}
+.phone-property {
+  display: block;
+}
+.not_valid {
+  color: red;
+  font-style: italic;
+  font-size: 150%;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+.btn {
+  color: rgb(35, 77, 51);
+  font-weight: 600;
+  border-radius: 5px;
+  border-color: rgb(14, 61, 33);
+  border-width: 2px;
+  background: rgba(255,255,255, 0.95);
+}
+h1 {
+  text-align: center;
+  background: rgba(255,255,255, 0.7);
+  padding: 4px;
+  color: rgb(40, 108, 91);
+  border-radius: 10px;
+}
+h2 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  color: honeydew;
+}
+h4 {
+  color: honeydew;
+}
+h5 {
+  color: honeydew;
+}

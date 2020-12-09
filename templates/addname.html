@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}addname{% endblock %}
+
+{% block content %}
+<h4>Add a Phone Number</h4>
+<h5>Enter a name</h5>
+<div id="names and phone">
+  <form id="search-form" class="row" method="POST" action="#">
+    <div class="col-auto">
+      <label for="names" class="visually-hidden">name</label>
+      <input class="form-control" id="names" name="names" type="text" placeholder="someone" tabindex=0 autofocus required>
+      <h5>Enter a number</h5>
+      <label for="phonetoadd" class="visually-hidden">phone number</label>
+      <input class="form-control" id="phonetoadd" name="phones" type="text" placeholder="phonenumber" tabindex=0 required>
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn">Add</button>
+    </div>
+  </form>
+</div>
+<h2>Options</h2>
+<div id="results">
+  <div>
+    <a href="{{message}}"> {{message}}</a>
+  </div>
+  <div class="navbar-nav">
+    <a class="nav-item nav-link" href="{{ url_for('search') }}">Search the phonebook</a>
+    <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
+  </div>
+</div>
+{% endblock %}

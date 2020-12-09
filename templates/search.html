@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}find{% endblock %}
+
+{% block content %}
+<h4>Find a phone number from the company phone book</h4>
+<h5>Enter a name</h5>
+
+
+<div id="names">
+  <form id="search-form" class="row" method="GET" action="/search">
+    <div class="col-auto">
+      <label for="names" class="visually-hidden">name</label>
+      <input class="form-control" id="names" name="names" type="text" placeholder="someone" tabindex=0 autofocus required>
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn">Search</button>
+    </div>
+  </form>
+</div>
+<div class="not_valid">
+  {% if not_valid %}
+    {{not_valid}}
+  {% endif %}
+</div>    
+<h2>Results</h2>
+<div id="results">
+  <div class="phone-details">
+    {% if result %}
+      <div class="phone-property">The name entered: {{name}}</div>
+      <div class="phone-property">Phone Number: {{phonenumber}}</div>
+    {% endif %}
+  <div>
+    <a href="{{message}}"> {{message}}</a>
+  </div>
+  <div class="navbar-nav">
+    <a class="nav-item nav-link" href="{{ url_for('userphone') }}">User's phonebook</a>
+    <a class="nav-item nav-link" href="{{ url_for('addname') }}">Add to phonebook</a>
+    <a class="nav-item nav-link" href="{{ url_for('deletename') }}">Delete from phonebook</a>
+    <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
+  </div>
+</div>
+{% endblock %}
